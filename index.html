@@ -1,19 +1,84 @@
 <!DOCTYPE html>
-<html>
-<head><title>Tontine Digitale Togo</title></head>
-<body style="font-family: sans-serif; padding: 20px;">
-<h1>Tontine Digitale - Mixx by Yas / Moov Money</h1>
-<p>Groupe 1: 10 personnes x 10,000F = 100,000F par mois</p>
-<div style="border: 2px solid green; padding: 15px;">
-<h3>Cotiser maintenant</h3>
-<button style="background: yellow; padding: 10px;">Payer via Mixx by Yas</button>
-<button style="background: orange; padding: 10px;">Payer via Moov Money</button>
-<p><small>Paiement sécurisé via FedaPay</small></p>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tontine Digitale Hedra - Lomé Togo</title>
+<style>
+body{font-family:Arial; margin:0; background:#f8fafc; color:#222;}
+.header{background:#16a34a; color:white; padding:15px; text-align:center;}
+.card{background:white; margin:15px; padding:15px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+.btn{background:#16a34a; color:white; padding:14px; width:100%; border:none; border-radius:8px; font-weight:bold; font-size:16px;}
+.btn-retrait{background:#dc2626;}
+input,select{width:100%; padding:12px; margin:8px 0; border-radius:8px; border:1px solid #ccc; box-sizing:border-box;}
+table{width:100%; border-collapse:collapse;}
+td{padding:8px; border-bottom:1px solid #eee;}
+.badge{background:#dcfce7; color:#166534; padding:4px 8px; border-radius:10px; font-size:12px;}
+</style>
+</head>
+<body>
+
+<div class="header">
+<h2>🌍 Tontine Digitale Hedra</h2>
+<p>Lomé - Hedranawoé | 10 personnes x 10 000F</p>
+<p>Gérante: D'ALMEIDA Ayité</p>
 </div>
-<h3>Membres du groupe</h3>
-<ul>
-<li>1. Kodjo - Payé ✓</li>
-<li>2. Afi - En attente</li>
-</ul>
+
+<div class="card">
+<h3>💰 Payer ma cotisation</h3>
+<p>Montant: <b>10 000 FCFA / mois</b></p>
+<button class="btn" onclick="payer()">Payer via Mixx by Yas / Moov Flooz</button>
+<p style="font-size:12px; color:#666; text-align:center; margin-top:10px;">Paiement sécurisé par FedaPay</p>
+</div>
+
+<!-- PARTIE RETRAIT QUE TU AS DEMANDÉ -->
+<div class="card" style="border:2px solid #16a34a;">
+<h3>💵 Partie RETRAIT - Mon Tour</h3>
+<p><b>Cagnotte disponible ce mois:</b></p>
+<h1 style="color:#16a34a; text-align:center; margin:10px 0;">100,000 FCFA</h1>
+<p><b>Tour actuel:</b> Membre 3 / 10</p>
+<p><b>Bénéficiaire:</b> <span class="badge">D'ALMEIDA Ayité - TOI</span></p>
+<p><b>Condition:</b> ✅ Tu as bien cotisé ce mois</p>
+
+<label>Ton numéro Mobile Money pour recevoir:</label>
+<input type="tel" id="numRetrait" placeholder="90 12 34 56">
+<select id="reseau">
+<option>Mixx by Yas (Togocom)</option>
+<option>Moov Money Flooz</option>
+</select>
+
+<button class="btn btn-retrait" onclick="demanderRetrait()">🚀 DEMANDER MON RETRAIT 100,000F</button>
+
+<div style="background:#f0fdf4; padding:10px; border-radius:8px; margin-top:10px; font-size:12px;">
+<b>Comment ça marche:</b><br>
+1. Tu cliques Demander retrait<br>
+2. La gérante valide (max 2h)<br>
+3. Tu reçois 100,000F direct sur ton Mixx/Flooz<br>
+4. SMS FedaPay comme preuve
+</div>
+</div>
+
+<div class="card">
+<h3>📜 Historique des Retraits</h3>
+<table>
+<tr><td>Oct 2026 - Koffi A.</td><td>100,000F</td><td>✅ Payé</td></tr>
+<tr style="background:#fef3c7;"><td><b>Nov 2026 - Ayité D. (Toi)</b></td><td><b>100,000F</b></td><td>⏳ Ton tour</td></tr>
+<tr><td>Déc 2026 - Ama T.</td><td>100,000F</td><td>⏳ À venir</td></tr>
+</table>
+</div>
+
+<script>
+function payer(){
+  alert("Redirection FedaPay - Paiement 10,000F\n\nAprès ton inscription FedaPay terminée, on branchera le vrai lien ici.");
+  // window.location.href = "https://pay.fedapay.com/ton-lien";
+}
+function demanderRetrait(){
+  let num = document.getElementById('numRetrait').value;
+  let reseau = document.getElementById('reseau').value;
+  if(num.length < 8){ alert("Entre ton vrai numéro"); return; }
+  alert("✅ Demande de retrait envoyée!\n\nMontant: 100,000 FCFA\nVers: "+num+" ("+reseau+")\n\nLa gérante D'ALMEIDA Ayité (18 juin 1992) va confirmer. Tu recevras l'argent dans 5 minutes sur ton "+reseau+".");
+}
+</script>
+
 </body>
 </html>
